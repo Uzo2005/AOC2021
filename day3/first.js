@@ -131,4 +131,4 @@ const answer = parseInt(gammaDigits, 2) * parseInt(epsilonDigits, 2);
 
 console.log ("answer: ", answer)
 
-console.log(totalOfIndex0)
+// console.log(totalOfIndex0)
