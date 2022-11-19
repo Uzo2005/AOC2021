@@ -51,7 +51,7 @@ function getOxygenGenRating(initialArr, j) {
     }
 
   }
- return newInitialArr
+ return getOxygenGenRating(newInitialArr, j+1);  //Recursive gang :)
 }
 
 
@@ -98,14 +98,15 @@ function getCo2ScrubberRating(initialArr, j) {
       }
     }
   }
-  return newInitialArr;
+
+  return getCo2ScrubberRating(newInitialArr, j+1); //hurray!!!, my first successfull recursion!!
 }
 
 
 
-const getFinalOxygenRating = getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(getOxygenGenRating(arrFromData, 0), 1), 2), 3), 4), 5), 6), 7), 8), 9), 10), 11)
+const getFinalOxygenRating = getOxygenGenRating(arrFromData, 0)
 const getOxygenGenRatingInDecimal = parseInt(getFinalOxygenRating, 2)
-const getFinalCo2ScrubberRating = getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(getCo2ScrubberRating(arrFromData, 0), 1), 2), 3), 4), 5), 6), 7), 8), 9), 10), 11)
+const getFinalCo2ScrubberRating = getCo2ScrubberRating(arrFromData, 0);
 const getCo2ScrubberRatingInDecimal = parseInt(getFinalCo2ScrubberRating, 2)
 
 const answer = getCo2ScrubberRatingInDecimal * getOxygenGenRatingInDecimal
